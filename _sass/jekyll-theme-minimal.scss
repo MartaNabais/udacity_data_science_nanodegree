@@ -5,8 +5,9 @@ body {
   background-color: #fff;
   padding: 50px;
   font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color:#727272;
+  color: #727272;
   font-weight:400;
+  text-align:justify;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -60,11 +61,40 @@ a:hover small {
   margin:0 auto;
 }
 
-blockquote {
-  border-left:1px solid #e5e5e5;
-  margin:0;
-  padding:0 0 0 20px;
+blockquote{
+  font-size: 1.4em;
+  width:60%;
+  margin:50px auto;
+  font-family:Open Sans;
   font-style:italic;
+  color: #555555;
+  padding:1.2em 30px 1.2em 75px;
+  border-left:8px solid lightskyblue ;
+  line-height:1.6;
+  position: relative;
+  background:#EDEDED;
+}
+
+blockquote::before{
+  font-family:Arial;
+  content: "\201C";
+  color:lightskyblue;
+  font-size:4em;
+  position: absolute;
+  left: 10px;
+  top:-10px;
+}
+
+blockquote::after{
+  content: '';
+}
+
+blockquote span{
+  display:block;
+  color:#333333;
+  font-style: normal;
+  font-weight: bold;
+  margin-top:1em;
 }
 
 code, pre {
@@ -186,6 +216,36 @@ strong {
   color:#222;
 }
 
+.button {
+  background-color: lightskyblue; 
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 8px;
+}
+
+/* Darker background on mouse-over */
+.button:hover {
+  background-color: RoyalBlue;
+  cursor:pointer;
+}
+
+/* Pen emoji in button for First project */
+.button1::before {
+  content: "🖋";
+  font-size:30px;
+}
+
+/* Hammer and wrench emoji in button for second project */
+.button2::before {
+  content: "🛠";
+  font-size:30px;
+}
+
 section {
   width:900px;
   float:right;
@@ -210,6 +270,8 @@ footer {
   bottom:50px;
   -webkit-font-smoothing:subpixel-antialiased;
 }
+
+
 
 @media print, screen and (max-width: 960px) {
 
