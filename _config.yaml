@@ -1,6 +1,8 @@
 title: Udacity Data Science Nanodegree
 logo: /assets/img/logo.png
-description: First Project - Writing a Data Science Blog Post.
+description: This is a repository for my Udacity Data Science Nanodegree Projects.
 show_downloads: false
 google_analytics:
 theme: jekyll-theme-minimal
+author: Marta Nabais
+baseurl: /udacity_data_science_nanodegree
