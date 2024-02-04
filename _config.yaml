@@ -4,5 +4,4 @@ description: This is a repository for my Udacity's Data Science Nanodegree Proje
 show_downloads: false
 google_analytics:
 theme: jekyll-theme-minimal
-baseurl: /udacity_data_science_nanodegree
-url: https://martanabais.github.io/
+baseurl: https://martanabais.github.io/udacity_data_science_nanodegree
