@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Crime Trends in Scotland
 author: Marta Nabais
 tags: Scotland Crime k-Means DataScience
