@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 
+title: Crime Trends in Scotland
 ---
 
 # Crime Trends in Scotland
