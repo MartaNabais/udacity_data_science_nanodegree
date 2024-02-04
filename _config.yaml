@@ -1,0 +1,8 @@
+title: Udacity's Data Science Nanodegree Project Repository
+logo: /assets/img/logo.png
+description: This is a repository for my Udacity's Data Science Nanodegree Projects.
+show_downloads: false
+google_analytics:
+theme: jekyll-theme-minimal
+baseurl: /udacity_data_science_nanodegree
+url: https://martanabais.github.io/
