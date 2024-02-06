@@ -9,7 +9,7 @@ title: Udacity's Data Science Nanodegree Project repository
 ## First Project
 <ul>
     {% for post in site.posts %}
-        {% if post.title == "Crime Trends in Scotland" %}
+        {% if post.title == "Crime Trends in Scotland: What is going on in Shetland?" %}
         <button class="button button1">  <a href="{{ site.baseurl }}{{ post.url }}">  Writing a Data Science Blog Post </a>
         </button>
         

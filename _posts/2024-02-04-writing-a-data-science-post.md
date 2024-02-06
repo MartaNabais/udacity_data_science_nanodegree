@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Crime Trends in Scotland
+title: "Crime Trends in Scotland: What is going on in Shetland?"
 tags: CrimeTrends Scotland kMeans-clustering DataScience Python
 ---
 
@@ -148,7 +148,7 @@ style="height:400px; width: 100%;" frameborder="0">
 <p> We can clearly see, that Cluster 1 (East Dunbartonshire and East Renfrewshire) has <strong>lower</strong> mean crime rates compared to the other clusters, and we can observe the exact opposite for cluster number 2. 
 </p>
 
-<p> The separation between clusters is visible if we plot crime rates for <i>"Common assault"</i> and <i>"Vandalism"</i>, for example:
+<p> The separation between clusters is also visible if we plot crime rates for <i>"Common assault"</i> and <i>"Vandalism"</i>, for example. In this case, these two crime types seem to vary <i> linearly </i>,that is, a county with high vandalism rates will also likely have high common assault rates:
 </p>
 
 <iframe
@@ -157,7 +157,7 @@ style="height:400px; width: 100%;" frameborder="0">
 </iframe>
 
 <p>
-Interestingly, this separation becomes murkier if we plot  crime rates for <i>"Common assault"</i> and <i>"Drugs Possession"</i>:
+Interestingly, this separation becomes murkier if we plot  crime rates for <i>"Common assault"</i> and <i>"Drugs Possession"</i>. In this case, the linearity of their relationship is not so clear. For example, if we hover over the Shetland Islands, we can see they show high rates for drug possession, but relatively lower rates for common assault:
 </p>
 
 <iframe
@@ -165,10 +165,16 @@ src="https://nbviewer.org/github/MartaNabais/udacity_html_first_project/blob/mai
 style="height:400px; width: 100%;" frameborder="0">
 </iframe>
 
+<p style="font-size:18px;color:grey;"> It makes me wonder...</p>
+<p style="font-size:22px;color:grey;text-align:center;"> What is going in Shetland? </p>
+<p>&nbsp;</p>
+
+<hr>
+
 <h2> Conclusions </h2>
 <ol>
   <li> Overall crime rates seem to be going down in Scotland.  </li>
-  <li> Some areas with lower crime rates have shown an increase in overall crime rates last year (e.g., Orkney, Shetlands and Outer-Hebrides.).</li>
+  <li> Some areas with lower crime rates have shown an increase in overall crime rates last year (e.g., Orkney, Shetlands and Outer-Hebrides).</li>
   <li> We can cluster Scottish counties into 4-different groups taking into account different crime type rates. From lower to higher mean crime rates: Cluster 1 < Cluster 3 < Cluster 4 < Cluster 2. </li>
 </ol>
 
@@ -176,8 +182,10 @@ style="height:400px; width: 100%;" frameborder="0">
 
 <p> There are several limitations to these analyses, including:
  <ul>
-  <li> The high-dimensionality of the data: As the number of dimensions increases, a distance-based similarity measure converges to a constant value between any given examples. I could've potentially addressed this by using a dimensionality reduction algorithm. </li>
-  <li> The random initialization of <i>k</i>, which can result in different cluster shapes and outlier effects. </li>
+  <li> The high-dimensionality of the data: As the number of dimensions increases, a distance-based similarity measure converges to a constant value between any given examples. I could've potentially addressed this by using a dimensionality reduction technique (such as principal component analysis). </li>
+  <li> The random initialization of <i>k</i> being dependent on the initial values. </li>
+  <li> Highly impacted by outliers. </li>
+  <li> Always tried to find circular clusters. </li>
  </ul>
  </p>
 
@@ -189,6 +197,6 @@ style="height:400px; width: 100%;" frameborder="0">
   <li> Why do some counties show high crime rate levels of one type of crime, but not others (e.g., Shetlands have high drugs possession crime rates, but overall low crime)?</li>
   <li> Can we reduce dimensionality of data before clustering? </li>
   <li> Is there a better algorithm other than K-means to capture non-spherical clusters? </li>
-  <li> Even though crime rates are calculated per capite, what is the effect on population density? </li>
+  <li> Even though crime rates are calculated per capita, what is the effect of different population densities in each county? </li>
 
 </ul>
