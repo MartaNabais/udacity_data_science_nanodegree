@@ -18,7 +18,19 @@ This code runs with Python 3.11.5 and requires some libraries:
 
 ## Project Motivation<a name="motivation"></a>
 
+This year, I have started working for the Scottish Government, within the AI & Data Science unit. I am therefore looking to enhance my skills as a Data Scientist, to aid in implementing solutions that could help government make the fastest, best, and fairest decisions.
 
+I have always been fascinated by crime, and I know I am not alone. The growing popularity of crime shows means big business and not just for streaming services — yes, I am looking at you, Netflix.
+
+Beyond personal curiosity, crime statistics serve as a vital tool for shaping government policies. These statistics provide invaluable insights into the frequency and distribution of criminal activities, offering a compass for policymakers to navigate the complexities of law enforcement.
+
+By understanding such patterns, authorities can strategically allocate resources, optimizing the deployment of police presence in areas with higher crime rates. Moreover, a nuanced analysis of crime statistics proves instrumental in identifying and addressing emerging crime problems, fostering a proactive and adaptable approach to maintaining public safety.
+
+In here, I have analysed the “Recorded Crimes and Offences” dataset, which contains statistics on crimes and offences, including number of crimes/offences and crime/offence rates per 10,000 population recorded by Police Scotland from 1996/97 to 2022/23 and by Local Authority. I have decided to focus on three simple exploratory questions for my first project:
+
+1. How have reported crime rates changed over time in Scotland?
+2. In the past year, which countries show the highest increase and decrease in overall crime rates?
+3. Which Scottish counties have more similar crime patterns?
 
 ## File Descriptions <a name="files"></a>
 
