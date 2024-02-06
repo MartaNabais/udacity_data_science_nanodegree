@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Crime Trends in Scotland
+tags: CrimeTrends Scotland kMeans-clustering DataScience Python
 ---
 
 
@@ -8,7 +9,7 @@ title: Crime Trends in Scotland
 
 ## Introduction
 
-<p> This year, I have started working for the Scottish Government, within the AI & Data Science unit. I am therefore looking to enhance my skills as a Data Scientist, to aid in implementing solutions that could help government make the fastest, best, and fairest, of all possible decisions.
+<p> This year, I have started working for the Scottish Government, within the AI & Data Science unit. I am therefore looking to enhance my skills as a Data Scientist, to aid in implementing solutions that could help government make the fastest, best, and fairest decisions.
 </p>
 
 <p> This exercise is a tiny first step into that journey, which is also being fostered by  <a href="#" onclick='window.open("https://www.udacity.com/course/data-scientist-nanodegree--nd025");return false;'> Udacity’s Nanodegree in Data Science.</a>
@@ -44,7 +45,7 @@ is still just a work of fiction, we need to actively advocate against implementa
 
 
 ## The dataset
-<p>The Scottish Government has made over 250 datasets from a range of producers publicly available at statistics.gov.scot. It is a great resource, and I have focused on the “Recorded Crimes and Offences” dataset.
+<p>The Scottish Government has made over 250 datasets from a range of producers publicly available at statistics.gov.scot. It is a great resource, and here I have focused on the “Recorded Crimes and Offences” dataset.
 </p>
 <p>This dataset contains statistics on crimes and offences, including number of crimes/offences and crime/offence rates per 10,000 population recorded by Police Scotland from 1996/97 to 2022/23 and by Local Authority. I have decided to focus on three simple exploratory questions for my first project.
 </p>
@@ -57,59 +58,137 @@ is still just a work of fiction, we need to actively advocate against implementa
 <p>In the figure below, you can see how crime rates have evolved over the years, for different counties in Scotland (you can hover over the lines to check for specific values): </p>
 
 <iframe
-  src="https://nbviewer.org/github/MartaNabais/html_attempt/blob/main/scottish_crime_ratios_over_time.html"
-  style="height:400px; width: 100%;" frameborder="0" title="Fig.1 — Scottish crime rates over time.">
+  src="https://nbviewer.org/github/MartaNabais/udacity_html_first_project/blob/main/scottish_crime_ratios_over_time.html"
+  style="height:400px; width: 100%;" frameborder="0">
 </iframe>
+
+<p style="text-align:center; color:grey;">Fig.1 - Scottish Crime Rates over the Years.</p>
 
 <p> If we focus on the year 1996/1997 (left-most side of the figure), there are a couple of counties that stand out for having a lot more reported crimes than the rest. Here’s the <strong>top-three</strong>: 
 </p>
 
 <ul>
-    <li><strong>Glasgow</strong> is first (with a staggering 1647 crimes reported for every 10,000 people counted) 🥇</li>
+    <li><strong>Glasgow</strong> is first (with a staggering 1647 crimes reported for every 10,000 people) 🥇</li>
     <li><strong>Dundee</strong> comes in a close second 🥈</li>
     <li><strong>Aberdeen</strong> comes in third 🥉</li>
+    Although I am not sure this is a race you would really want to win…
 </ul>
 
 
-<p>Although I am not sure this is a race you would really want to win…</p>
-
-<p>The <strong>bottom-three</strong> are all Scottish isles: <strong>Orkney, Shetland</strong> and <strong>Na h-Eileanan an Iar</strong> (the Outer Hebrides). In conclusion, if I were more risk-averse and had to decide where I would relocate within Scotland, I would be tempted to embrace the island lifestyle!
+<p>The <strong>bottom-three</strong> are all Scottish isles: <strong>Orkney, Shetland</strong> and <strong>Na h-Eileanan an Iar</strong> (the Outer Hebrides). 
 </p>
 
-<p> Nonetheless, if we follow the lines from the past to the end of 2022 (or left to right), we can see the <i>trend</i> across all counties looks good: crime rates seem to be going down in Scotland!</p>
+<p> In conclusion, if I were more risk-averse and had to decide where I would relocate within Scotland, I would be tempted to embrace the island lifestyle! Nonetheless, if we follow the lines from the past to the end of 2022 (or left to right), we can see the <strong><i>trend</i></strong> across all counties looks good: crime rates seem to be going <strong>down</strong> in Scotland!</p>
 
 ## Question 2: In the past year, which countries show the highest increase and decrease in overall crime rates?
 
-<p>Although there seem to be higher crime rates in the mainland compared to the isles, it may also be interesting to look how rates have been <i>changing</i> within each county. To help us answer this question, we can take the <i>percentage change</i> between crime rates for the most recent and past years.
+<p>Although there seem to be higher crime rates in the mainland compared to the isles, it may also be interesting to look how rates have been changing within each county. To help us answer this question, we can take the <strong><i>percentage change</i></strong> between crime rates for the most recent and past years.
 </p>
 
-<p>In the bar graph below, I have calculated the percentage change in crime rates for each county, between the years 2022 (latest data provided) and 2021. Positive numbers imply there has been a <strong><i>X% increase</i></strong> and negative numbers imply there has been a <strong><i>X% decrease</i></strong>:
+<p>In the figure below, I have calculated the percentage change in crime rates for each county, between the years 2022/2023 (latest data provided) and 2021/2022. Positive numbers imply there has been a <strong><i>increase</i></strong> and negative numbers imply there has been a <strong><i>decrease</i></strong> in crime rates:
 </p>
 
 <iframe
-src="https://nbviewer.org/github/MartaNabais/html_attempt/blob/main/percent_change_crimes.html"
+src="https://nbviewer.org/github/MartaNabais/udacity_html_first_project/blob/main/percent_change_crimes.html"
 style="height:400px; width: 100%;" frameborder="0">
 </iframe>
 
 
-<p> The three counties showing highest increase in crime rates in the past years are the three isles: Shetlands (40%), Orkney (39%) and Na h-Eileanan an Iar (33%). This would’ve been hard to conclude just by visually inspecting Fig.1!
+<p> Interestingly, the three counties showing highest increase in crime rates in the past years are the three isles: <strong>Shetlands (40%), Orkney (39%) and Na h-Eileanan an Iar (33%). This would’ve been hard to conclude just by visually inspecting Fig.1!</strong>
 </p>
 
 <p>However, it is important to note this is a cross-sectional comparison, meaning it is only a snapshot of a point in time. Just because crime rates increased in the isles, does not mean they are expected to keep increasing over time.</p>
 
 ## Question 3: Which Scottish counties have more similar crime patterns?
 
-<p> Looking at overall crime rates gives us a broad perspective of crime trends in Scotland. However, I would also like to understand if we can find <i>similarity patterns</i> between counties, by making use of information for <i>different crime types</i>.
+<p> Looking at overall crime rates gives us a broad perspective of crime trends in Scotland. However, I would also like to understand if we can find <strong><i>similarity patterns</i></strong> between counties, by looking at the <strong><i>different crime types</i></strong>.
 </p>
 
 <p> Fortunately, our dataset contains such information. Indeed, if we take a look at the distributions of different crime type rates for some counties for last year: 
 </p>
 
 <iframe
-src="https://nbviewer.org/github/MartaNabais/html_attempt/blob/main/different_crime_types_2022-2023.html"
+src="https://nbviewer.org/github/MartaNabais/udacity_html_first_project/blob/main/different_crime_types_2022-2023.html"
 style="height:400px; width: 100%;" frameborder="0">
 </iframe>
 
 <p>
-If we look at the <strong><i>proportion</i></strong> of different crime types between each county, we can see that some counties seem to have more similar distributions than other. For example, Glasgow City seems to have similar distribution to Aberdeen City. So do Falkirk and Inverclyde. And East Dunbartonshire and East Renfrewshire. And finally, so do the Isles!
+If we compare the <strong><i>total value of crime rates</i></strong> and the <strong><i>proportions</i></strong> of different crime types between each county, we can see that some counties seem to have more similar patterns to one another. For example, Glasgow and Edinburgh are more similar to each other and the Orkney Islands are more similar to East Dunbartonshire.
 </p>
+
+
+<p>To assess this more formally, we can make use of mathematical algorithms. More specifically, I will make use of the <strong><i>k-Means Clustering algorithm</i></strong>. Without getting too much into details, this algorithm aims to partition data into <strong><i>k</i></strong> clusters in a way that data points in the same cluster are more similar to each other. This is exactly what I need to answer my question!
+</p>
+
+<p> After applying the algorithm using the different crime type rates as data points, I ended up with 4 different clusters:
+<p></p>
+
+<iframe
+src="https://nbviewer.org/github/MartaNabais/udacity_html_first_project/blob/main/cluster_crimes_chloropeth.html"
+style="height:400px; width: 100%;" frameborder="0">
+</iframe>
+
+<ul>
+  <li> <strong> <a style="color:purple;">Cluster 1</a></strong>, consists of East Dunbartonshire and East Renfrewshire.
+  </li> <strong> <a style="color:blue;">Cluster 2</a></strong>, consists of Aberdeen, Dundee, Edinburgh and Glasgow.
+  <li> <strong> <a style="color:red;">Cluster 3</a></strong>, consists of Aberdeenshire, Angus, Argyll and Bute, Highland, Moray, Na h-Eileanan Siar, Orkney Islands, Perth and Kinross, Scottish Borders, Shetland Islands and Stirling.
+  </li> 
+  <li> <strong> <a style="color:green;">Cluster 4</a></strong>, consists of Clackmannanshire Dumfries and Galloway, East Ayrshire, East Lothian, Falkirk, Inverclyde, Midlothian, North Ayrshire, North Lanarkshire, Renfrewshire, South Ayrshire, South Lanarkshire, West Dunbartonshire and West Lothian. 
+  </li>
+</ul>
+
+<p> To check what the different clusters are capturing, I have calculated the <strong><i> mean crime rates </i></strong> for each crime type in each cluster:
+</p>
+
+<iframe
+src="https://nbviewer.org/github/MartaNabais/udacity_html_first_project/blob/main/cluster_means_2022-2023.html"
+style="height:400px; width: 100%;" frameborder="0">
+</iframe>
+
+<p> We can clearly see, that Cluster 1 (East Dunbartonshire and East Renfrewshire) has <strong>lower</strong> mean crime rates compared to the other clusters, and we can observe the exact opposite for cluster number 2. 
+</p>
+
+<p> The separation between clusters is visible if we plot crime rates for <i>"Common assault"</i> and <i>"Vandalism"</i>, for example:
+</p>
+
+<iframe
+src="https://nbviewer.org/github/MartaNabais/udacity_html_first_project/blob/main/vandalism_vs_assault_clusters_2022-2023.html"
+style="height:400px; width: 100%;" frameborder="0">
+</iframe>
+
+<p>
+Interestingly, this separation becomes murkier if we plot  crime rates for <i>"Common assault"</i> and <i>"Drugs Possession"</i>:
+</p>
+
+<iframe
+src="https://nbviewer.org/github/MartaNabais/udacity_html_first_project/blob/main/drugs_possession_vs_assault_clusters_2022-2023.html"
+style="height:400px; width: 100%;" frameborder="0">
+</iframe>
+
+<h2> Conclusions </h2>
+<ol>
+  <li> Overall crime rates seem to be going down in Scotland.  </li>
+  <li> Some areas with lower crime rates have shown an increase in overall crime rates last year (e.g., Orkney, Shetlands and Outer-Hebrides.).</li>
+  <li> We can cluster Scottish counties into 4-different groups taking into account different crime type rates. From lower to higher mean crime rates: Cluster 1 < Cluster 3 < Cluster 4 < Cluster 2. </li>
+</ol>
+
+<h3> Limitations </h3>
+
+<p> There are several limitations to these analyses, including:
+ <ul>
+  <li> The high-dimensionality of the data: As the number of dimensions increases, a distance-based similarity measure converges to a constant value between any given examples. I could've potentially addressed this by using a dimensionality reduction algorithm. </li>
+  <li> The random initialization of <i>k</i>, which can result in different cluster shapes and outlier effects. </li>
+ </ul>
+ </p>
+
+<h3> Some possible follow-up questions </h3>
+<ul>
+
+  <li> Can we predict specific crime types for each county? </li>
+  <li> Why aren't the isles clustered within cluster 1? </li>
+  <li> Why do some counties show high crime rate levels of one type of crime, but not others (e.g., Shetlands have high drugs possession crime rates, but overall low crime)?</li>
+  <li> Can we reduce dimensionality of data before clustering? </li>
+  <li> Is there a better algorithm other than K-means to capture non-spherical clusters? </li>
+  <li> Even though crime rates are calculated per capite, what is the effect on population density? </li>
+
+</ul>
