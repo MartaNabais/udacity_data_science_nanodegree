@@ -1,13 +1,11 @@
 import pandas as pd
-from dash import Dash, dcc, html, Input, Output
-import plotly.express as px
 
 def parse_df(df):
     """
     INPUT 
-        - df: crime counts/ratios data frame with columns "FeatureCode", "FeatureName", "DateCode", "Crime or Offence".
+        - df: crime counts/rates data frame with columns "FeatureCode", "FeatureName", "DateCode", "Crime or Offence".
     OUTPUT: 
-        - crimes_ratios_df: crime ratios data frame containing ratios values only, excluding for 'Scotland' LAD.
+        - crimes_ratios_df: crime rates data frame containing ratios values only, excluding for 'Scotland' LAD.
     """
     try:
         # I will rename columns here, so they are more clear
