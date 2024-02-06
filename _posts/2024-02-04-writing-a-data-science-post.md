@@ -62,8 +62,6 @@ is still just a work of fiction, we need to actively advocate against implementa
   style="height:400px; width: 100%;" frameborder="0">
 </iframe>
 
-<p style="text-align:center; color:grey;">Fig.1 - Scottish Crime Rates over the Years.</p>
-
 <p> If we focus on the year 1996/1997 (left-most side of the figure), there are a couple of counties that stand out for having a lot more reported crimes than the rest. Here’s the <strong>top-three</strong>: 
 </p>
 
@@ -75,7 +73,7 @@ is still just a work of fiction, we need to actively advocate against implementa
 </ul>
 
 
-<p>The <strong>bottom-three</strong> are all Scottish isles: <strong>Orkney, Shetland</strong> and <strong>Na h-Eileanan an Iar</strong> (the Outer Hebrides). 
+<p>The <strong>bottom-three</strong> are all Scottish isles: <strong>Orkney, Shetland</strong> and <strong>Na h-Eileanan an Iar</strong> (the Outer-Hebrides). 
 </p>
 
 <p> In conclusion, if I were more risk-averse and had to decide where I would relocate within Scotland, I would be tempted to embrace the island lifestyle! Nonetheless, if we follow the lines from the past to the end of 2022 (or left to right), we can see the <strong><i>trend</i></strong> across all counties looks good: crime rates seem to be going <strong>down</strong> in Scotland!</p>
@@ -94,7 +92,7 @@ style="height:400px; width: 100%;" frameborder="0">
 </iframe>
 
 
-<p> Interestingly, the three counties showing highest increase in crime rates in the past years are the three isles: <strong>Shetlands (40%), Orkney (39%) and Na h-Eileanan an Iar (33%). This would’ve been hard to conclude just by visually inspecting Fig.1!</strong>
+<p> Interestingly, the three counties showing highest increase in crime rates in the past years are the three isles: <strong>Shetlands (40%), Orkney (39%) and Na h-Eileanan an Iar (33%). This would’ve been hard to conclude just by visually inspecting the first figure!</strong>
 </p>
 
 <p>However, it is important to note this is a cross-sectional comparison, meaning it is only a snapshot of a point in time. Just because crime rates increased in the isles, does not mean they are expected to keep increasing over time.</p>
@@ -104,8 +102,12 @@ style="height:400px; width: 100%;" frameborder="0">
 <p> Looking at overall crime rates gives us a broad perspective of crime trends in Scotland. However, I would also like to understand if we can find <strong><i>similarity patterns</i></strong> between counties, by looking at the <strong><i>different crime types</i></strong>.
 </p>
 
-<p> Fortunately, our dataset contains such information. Indeed, if we take a look at the distributions of different crime type rates for some counties for last year: 
-</p>
+<p> Fortunately, our dataset contains such information. Indeed, we can take a look at the distributions of different crime type rates for some counties for last year. Please note: </p> 
+
+<ul>
+  <li> You can select (or deselect) different crime types to visualize, by double-clicking the crime type in the figure legend. </li>
+  <li> For visualization purposes, not all county names are shown, but you can get specific values and labels if you hover over the bars. </li>
+</ul>
 
 <iframe
 src="https://nbviewer.org/github/MartaNabais/udacity_html_first_project/blob/main/different_crime_types_2022-2023.html"
@@ -119,6 +121,8 @@ If we compare the <strong><i>total value of crime rates</i></strong> and the <st
 
 <p>To assess this more formally, we can make use of mathematical algorithms. More specifically, I will make use of the <strong><i>k-Means Clustering algorithm</i></strong>. Without getting too much into details, this algorithm aims to partition data into <strong><i>k</i></strong> clusters in a way that data points in the same cluster are more similar to each other. This is exactly what I need to answer my question!
 </p>
+
+<p> For transparency, I have to let you know I have removed all crime types with a value of zero for all counties (for example, crime rates assciated with coronavirus restrictions are 0, given we are focusing on the year 2022/2023. You can check this by double-clicking "Coronaviru Restrictions" in the figure above).</p>
 
 <p> After applying the algorithm using the different crime type rates as data points, I ended up with 4 different clusters:
 <p></p>
@@ -148,7 +152,7 @@ style="height:400px; width: 100%;" frameborder="0">
 <p> We can clearly see, that Cluster 1 (East Dunbartonshire and East Renfrewshire) has <strong>lower</strong> mean crime rates compared to the other clusters, and we can observe the exact opposite for cluster number 2. 
 </p>
 
-<p> The separation between clusters is also visible if we plot crime rates for <i>"Common assault"</i> and <i>"Vandalism"</i>, for example. In this case, these two crime types seem to vary <i> linearly </i>,that is, a county with high vandalism rates will also likely have high common assault rates:
+<p> The separation between clusters is also visible if we plot crime rates for <i>"Common assault"</i> and <i>"Vandalism"</i>, for example. In this case, these two crime types seem to vary <i> linearly, </i> that is, a county with high vandalism rates will also likely have high common assault rates:
 </p>
 
 <iframe
